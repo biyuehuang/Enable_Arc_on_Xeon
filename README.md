@@ -150,6 +150,7 @@ echo 1 > /sys/bus/pci/devices/0000\:42\:01.0/remove
 
 ## step 3: 运行脚本，使得显存识别成正确的16GB
 ```
+:~$ sudo systemctl disable gdm3
 :~$ sudo ./fix_arc_mod.sh
 Current PF Bar size: 08
 PF Bar size set to 16GB: 0e
