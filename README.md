@@ -196,3 +196,13 @@ Rescan
 :~$ uname -a
 Linux adc-a770-0 5.19.0-50-generic #50-Ubuntu SMP PREEMPT_DYNAMIC Mon Jul 10 18:24:29 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
 ```
+## 脚本解释
+Xeon连接多张Arc的方法
+Xeon识别8张Arc A770，不修改bios，进入ubuntu里面执行脚本
+支持Ice lake 和 SPR
+不同机型，需要修改脚本里的地址端口
+51 57 5b 62 9a d3 d7 de是PCIe的bdf地址 
+先找到寄存器，然后设置bar size为A770 16GB，再更新一下驱动设置
+remove bdf地址的上一层地址
+最后rescan
+for i in 51 57 5b 62 9a d3 d7 de
