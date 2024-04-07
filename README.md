@@ -149,6 +149,8 @@ echo 1 > /sys/bus/pci/devices/0000\:42\:01.0/remove
 ```
 
 ## step 3: 运行脚本，使得显存识别成正确的16GB。首先关闭图形界面gdm3，再执行脚本。
+### 注意：每次重启机器都需要运行 sudo ./fix_arc_mod.sh 
+
 ```
 :~$ sudo systemctl disable gdm3
 :~$ sudo ./fix_arc_mod.sh
